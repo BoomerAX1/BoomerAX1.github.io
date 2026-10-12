@@ -1,4 +1,94 @@
+/*comment structure */
 h1 {color: blue; font-size: 30px} 
 button {background-color:aquamarine}
 body {background-color : rgba(53, 156, 216, 0.575)}
 .test {background-color: lightcoral;}
+.fixed {position:fixed ; top:0 ; width: 100%;}
+.linkbar1 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000000;
+
+li{
+  float: left;
+}
+
+li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover{
+    color: violet;
+}
+}
+
+.dividingcolor1{
+    background-color: black;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255, 0, 51);
+    font-size: larger;
+    h1 {color:darkorange};
+
+}
+.gradianttest{
+    background-image: linear-gradient(rgb(93, 171, 243), #002975 85%); 
+}
+/*Gridbox CSS*/
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  /*Deliniates 12 columns (standard according to w3), and makes them take up 1 fraction of space*/
+  background-color: rgb(0, 0, 0);
+  row-gap: 10px;
+  padding: 5px;
+}
+/*grid-template-columns takes value times X amount of columns you want. Auto will automatically shape the columns, or you can manually shape*/
+.container div {
+  background-color: #373c49;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.col6 {
+    grid-column: span 6;
+}
+.col4{
+    grid-column: span 4;
+}
+.col2{
+    grid-column: span 2;
+}
+.col12{
+    grid-column: span 12;
+}
+.col8{
+    grid-column:span 8;
+}
+.col10{
+    grid-column: span 10;
+}
+.row2{
+    grid-row: span 2;
+}
+.row4{
+    grid-row: span 4;
+}
+.row6{
+    grid-row: span 6;
+}
+.row8{
+    grid-row: span 8;
+}
+.row10{
+    grid-row: span 10;
+}
+.row12{
+    grid-row: span 12;
+}
