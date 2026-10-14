@@ -104,9 +104,9 @@ li a:hover{
 .container1{
     display: grid;
   grid-template-columns: repeat(12, 1fr);
-  /*Deliniates 12 columns (standard according to w3), and makes them take up 1 fraction of space*/
   row-gap: 10px;
   padding: 5px;
+  grid-auto-rows: max-content;
 }
 .container1 div {
     padding:10px;
@@ -152,6 +152,9 @@ li a:hover{
 }
 .row24{
     grid-row: span 24
+}
+.rowauto{
+    grid-row: span auto;
 }
 .container div.nospace{
     border: 0px;
