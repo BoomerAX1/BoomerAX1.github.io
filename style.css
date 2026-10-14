@@ -1,5 +1,9 @@
 /*comment structure */
-h1 {color: blue; font-size: 30px} 
+h1 {color: rgb(104, 104, 236); font-size: 30px} 
+.aboutheader{
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 button {background-color:aquamarine}
 body {background-color : rgba(53, 156, 216, 0.575)}
 .test {background-color: lightcoral;}
@@ -56,11 +60,29 @@ li a:hover{
         color:violet;
     }
     a{color:rgb(204, 231, 255); text-decoration: none; font-weight: bold;}
-
+}
+.gridcolor3{
+    h1{text-align: center; font-size: 20px};
+    p{margin-top: 10px;padding: 4px;font-size:14px; color:rgb(236, 107, 107); border: #000000 solid 1px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+}
+.gridcolor4{
+    border: 1px solid whitesmoke !important;
+    color:aqua;
+    b{color:rgb(178, 243, 255)};
+    h1{font-size: medium; text-align: center};
+}
+.gridnocolor{
+    background-color: transparent !important;
 }
 
 .gradianttest{
     background-image: linear-gradient(rgb(93, 171, 243), #002975 85%); 
+}
+.gradiant2{
+    background-image: linear-gradient(rgba(240, 45, 45, 0.76),rgb(55, 32, 109) 15%, rgb(46, 10, 46));
+}
+.gradiant3{
+    background-image: linear-gradient(rgba(240, 45, 45, 0.76),rgb(55, 32, 109) 5%, rgb(46, 10, 46));
 }
 /*Gridbox CSS*/
 .container {
@@ -78,6 +100,19 @@ li a:hover{
   border: 0px solid black;
   /*Changed border to 0px for the main page just to look cleaner, may change back to 1px later if need be*/
   padding: 10px;
+}
+.container1{
+    display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  /*Deliniates 12 columns (standard according to w3), and makes them take up 1 fraction of space*/
+  row-gap: 10px;
+  padding: 5px;
+}
+.container1 div {
+    padding:10px;
+}
+.container1 div.color{
+    background-color: #000000;
 }
 .col6 {
     grid-column: span 6;
@@ -118,6 +153,20 @@ li a:hover{
 .row24{
     grid-row: span 24
 }
+.container div.nospace{
+    border: 0px;
+    padding: 0px;
+    margin-top: 0px;
+    row-gap: 0px;
+}
+.container1 div.nopad{
+    padding:0px;
+}
+.nospace{
+    column-gap: none;
+    row-gap: none;
+}
+/*End of Gridbox*/
 .footerblock{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -129,4 +178,36 @@ li a:hover{
     a:hover{
         color:chocolate;
     }
+}
+
+.discp{
+    border: 1px solid;
+    padding:3px;
+    background-image: linear-gradient(white, rgb(153, 153, 153) 99%);
+    font-weight: 1000;
+    font-size: medium;
+    text-align: center;
+}
+.centerbold{
+    text-align: center;
+    font-weight: bold;
+}
+.center{
+    text-align:center;
+}
+.centerimage {
+  margin-left: 10%;
+  margin-right: auto;
+}
+.nospace{
+    border: 0px;
+    padding: 0px;
+    margin-top: 0px;
+}
+a.nodec{
+    text-decoration: none;
+    color:rgb(236, 107, 107);
+}
+a.nodec:hover{
+    color: lightskyblue;
 }
