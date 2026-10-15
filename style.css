@@ -71,6 +71,9 @@ li a:hover{
     b{color:rgb(178, 243, 255)};
     h1{font-size: medium; text-align: center};
 }
+.gridcolor5{
+    h1{color:black; text-align: center; font-size: medium;}
+}
 .gridnocolor{
     background-color: transparent !important;
 }
@@ -104,7 +107,7 @@ li a:hover{
 .container1{
     display: grid;
   grid-template-columns: repeat(12, 1fr);
-  row-gap: 10px;
+  row-gap: 1px;
   padding: 5px;
   grid-auto-rows: max-content;
 }
@@ -113,6 +116,23 @@ li a:hover{
 }
 .container1 div.color{
     background-color: #000000;
+}
+.container2{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 5px;
+    grid-auto-rows: max-content;
+}
+.container2 div{
+    padding:10px;
+}
+.container2 div.color{
+    background-image: linear-gradient(whitesmoke, grey);
+    font-weight: bold;
+    a{color:#002975};
+    a:hover{color:chocolate};
+    border: 1px solid black;
+    b{color:rgb(22, 75, 100)};
 }
 .col6 {
     grid-column: span 6;
