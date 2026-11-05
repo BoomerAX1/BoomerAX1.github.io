@@ -270,3 +270,10 @@ a.nodec{
 a.nodec:hover{
     color: lightskyblue;
 }
+.lock{
+    pointer-events: none;
+}
+/*pointer-events locks cursor clicking, keyboard clicking is locked manually using HTML in quiz.js*/
+.unlock{
+    pointer-events: default;
+}

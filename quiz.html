@@ -8,7 +8,7 @@
 </head>
 <body class="gradiant3">
     
-<ul class="linkbar1 fixed">
+<ul id ="quizhide" class="linkbar1 fixed">
   <li><a href="/">Home</a></li>
   <li><a href="about.html">About</a></li>
   <li><a href="concept.html">Concepts</a></li>
@@ -20,9 +20,15 @@
 
     <h1>ㅤ</h1>
     <h1 class="aboutheader">Material Quiz</h1>
+<form id="startform">
+    <p id="begintext">Are you ready to begin? The test will clear the topic bar and start the 10 minute timer.</p>
+    <button id="beginbutton" type="button">Begin Test</button>
+</form>
+
+
+    <form id="quizform" style="display:none">
     <h2 id="ttext" style="color:crimson">Time:</h2>
-    
-    
+    <fieldset id="questionfield" style="border:none; padding: 0px;">
     <h1>Question 1:</h1>
     <p id="q1" style="color:aquamarine">What is the numbers</p>
     <!--name= allows them to behave as a singular group-->
@@ -46,11 +52,13 @@
     1: <input class="correct" type="checkbox" name="q4">
     G: <input type="checkbox" name="q4">
     G: <input type="checkbox" name="q4">
-    
-    
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/disabled disable reference-->
+    </fieldset>
     <p style="color:red" id="demo">Final Result</p>
-    <button id="submit">Submit</button>
-    <button id="timer">Test Timer</button>
+    <p style="color:red; display: none;" id="demotime">Final Time</p>
+    <button id="submit" type="button">Submit</button>
+    <!--<button id="timer" type="button">Test Timer</button>-->
+    </form>
 
 <!--<footer class="footerblock">
     <div>
