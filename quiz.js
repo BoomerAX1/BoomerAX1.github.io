@@ -33,6 +33,7 @@ begin.addEventListener("click", function(){
   document.getElementById("quizform").style.display = "block";
   document.getElementById("startform").style.display = "none";
   document.getElementById("quizhide").style.display = "none";
+  document.getElementById("qfooter").style.display = "none";
   const timer = setInterval(function(){
 
     sec -=1
@@ -191,6 +192,7 @@ if (sec >= 51){
     s.style.display = "none";
     s.tabIndex = "-1";
     q.style.display = "grid";
+    document.getElementById("qfooter").style.display = "grid";
 
 });
 

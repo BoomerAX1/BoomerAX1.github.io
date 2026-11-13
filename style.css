@@ -210,6 +210,10 @@ li a:hover{
 .rowauto{
     grid-row: span auto;
 }
+.col6auto{
+    grid-column: span 6;
+    width: fit-content;
+}
 .rowsuperpad
 {
     grid-row: span auto;
@@ -335,4 +339,9 @@ input[type="checkbox"]{
 }
 .quizparatext{
     color:rgb(65, 243, 184);
+}
+.retake{
+    background-color:#000000;
+    color:white;
+    margin-left: 30%;
 }
