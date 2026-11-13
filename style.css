@@ -6,7 +6,7 @@ h1 {color: rgb(104, 104, 236); font-size: 30px}
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 button {background-color:aquamarine}
-body {background-color : rgba(53, 156, 216, 0.575)}
+.home body {background-color : rgba(53, 156, 216, 0.575)}
 .test {background-color: lightcoral;}
 .fixed {position:fixed ; top:0 ; width: 100%;}
 .linkbar1 {
@@ -171,6 +171,9 @@ li a:hover{
 .col5{
     grid-column: span 5;
 }
+.col7{
+    grid-column: span 7;
+}
 .col2{
     grid-column: span 2;
 }
@@ -276,4 +279,60 @@ a.nodec:hover{
 /*pointer-events locks cursor clicking, keyboard clicking is locked manually using HTML in quiz.js*/
 .unlock{
     pointer-events: default;
+}
+.timercolor{
+    color: rgb(255, 0, 51);
+    text-align: right;
+    position: sticky;
+    top: 25px;
+    font-size: 22px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.resultcolor{
+    color: rgb(0, 0, 0);
+    background-image: linear-gradient(white, rgb(202, 198, 198));
+    border: 2px solid rgb(71, 71, 71);
+    padding:7px;
+    font-size: 14px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.quizgrid{
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    position:fixed;
+    width: 100%;
+}
+p.questioncorrect{
+    display:inline-block;
+    color:rgb(248, 218, 137);
+    font: bold;
+
+}
+p.questionincorrect{
+    display:inline-block;
+    color:rgb(248, 218, 137);
+    font: bold;
+}
+p.qtext{
+    color:rgb(248, 218, 137);
+    font: bold;
+}
+.gradiant4{
+    background-image: linear-gradient(white, grey);
+}
+.divborder{
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 16px;
+    width: fit-content;
+}
+input[type="radio"]{
+    margin-right: 10px;
+}
+input[type="checkbox"]{
+    margin-right: 10px;
+}
+.quizparatext{
+    color:rgb(65, 243, 184);
 }

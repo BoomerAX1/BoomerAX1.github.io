@@ -6,7 +6,7 @@
     <title>My GitHub.io Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="gradiant3">
+<body id="quizbody" class="gradiant3">
     
 <ul id ="quizhide" class="linkbar1 fixed">
   <li><a href="/">Home</a></li>
@@ -21,44 +21,222 @@
     <h1>ㅤ</h1>
     <h1 class="aboutheader">Material Quiz</h1>
 <form id="startform">
-    <p id="begintext">Are you ready to begin? The test will clear the topic bar and start the 10 minute timer.</p>
-    <button id="beginbutton" type="button">Begin Test</button>
+    <div class="container2">
+        <div class="color col12 gridcolor5">
+    <p id="begintext">Are you ready to begin? The test will clear the  navigation bar and start the <b>10 minute timer</b>. There will be <b>10 questions</b> to complete. <br> You should be familiar with all presented website topics before moving forward. <br>When you are done, you will be able to review your score and restart the quiz from this page.
+    </p>
+    </div>
+    <div class="col5"></div>
+    <div class="col2">
+        <button id="beginbutton" type="button">Begin Test</button>
+    </div>
+</div>
 </form>
 
 
-    <form id="quizform" style="display:none">
-    <h2 id="ttext" style="color:crimson">Time:</h2>
-    <fieldset id="questionfield" style="border:none; padding: 0px;">
+<form id="quizform" style="display:none">
+
+    <h2 id="ttext" class="timercolor">Time Remaining: 10:00</h2>
+    <div id="quizgrid" class=quizgrid style="display:none">
+        <div class="col7"></div>
+        <div class="col6 resultcolor">
+            <h2 id="passfailtext"></h2>
+            <h2 id="totaltext"></h2>
+            <h2 id="timetext"></h2> 
+        </div>
+    </div>
+<!--https://stackoverflow.com/questions/31719391/how-to-change-colour-of-text-when-using-document-getelementbyidid-innerhtml color changing-->
+
+    <div class="divborder">
     <h1>Question 1:</h1>
-    <p id="q1" style="color:aquamarine">What is the numbers</p>
+    <h3 id="q1" style="color:aquamarine">What does  UGC stand for?</h3>
+    <p class="quizparatext">A: United General Consensus</p>
+    <p class="quizparatext">B: User Generated Content</p>
+    <p class="quizparatext"> C: Unfufilling Generative Corporation</p>
+    <p class="quizparatext">D: User-Gated Content</p>
+    
     <!--name= allows them to behave as a singular group-->
-    G: <input type="radio" name="q1">
-    1: <input class="correct" type="radio" name="q1" >
-    G: <input  type="radio" name="q1">
-    G: <input type="radio" name="q1">
+    <p class="questionincorrect">A:</p> <input type="radio" name="q1">
+    <p class="questioncorrect">B:</p> <input class="correct" type="radio" name="q1" >
+    <p class="questionincorrect">C:</p> <input  type="radio" name="q1">
+    <p class="questionincorrect">D:</p> <input type="radio" name="q1">
     <!--<p style="color:red" id="demo">Final Result</p>-->
+    </div>
+
+    <div class="divborder">
     <h1>Question 2:</h1>
-    <p id="q2" style="color:aquamarine">What is the numbers</p>
-    G: <input type="radio" name="q2">
-    1: <input class="correct" type="radio" name="q2" >
-    G: <input  type="radio" name="q2">
-    G: <input type="radio" name="q2">
+    <h3 id="q2" style="color:aquamarine">What is UI/UX oriented abstraction?</h3>
+    <p class="quizparatext">
+        A: The process of making elements artistic for marketing or public production purposes <br>
+    </p>
+    <p class="quizparatext">
+        B: The process of software development that allows developers to divide work into chunks
+    </p>
+    <p class="quizparatext">
+        C: The process of making programs simple to understand to a user, regardless of interior complexity 
+    </p> 
+    <p class="quizparatext">
+        D: The process of hardware engineering that makes space for newer elements through spacial rearrangement
+    </p>
+    <p class="questionincorrect">A:</p> <input type="radio" name="q2">
+    <p class="questionincorrect">B:</p> <input  type="radio" name="q2">
+    <p class="questioncorrect">C:</p> <input class="correct" type="radio" name="q2" >
+    <p class="questionincorrect">D:</p> <input type="radio" name="q2">
+    </div>
+
+    <div class="divborder">
     <h1>Question 3:</h1>
-    <p style="color:aquamarine">What is the numbers</p>
-    1: <input type="text" id="q3">
+    <h3 style="color:aquamarine" id="q3q">What is a provided example of UGC being used as a development tool?</h3>
+    <p class="quizparatext">Hint: There are two possible answers. What are their names?</p>
+    <p class = "qtext" id="q3p">Answer(s):</p>
+    <input type="text" id="q3">
+    </div>
+
+    <div class="divborder">
     <h1>Question 4:</h1>
-    <p style="color:aquamarine">What is the numbers</p>
-    1: <input class="correct" type="checkbox" name="q4">
-    1: <input class="correct" type="checkbox" name="q4">
-    G: <input type="checkbox" name="q4">
-    G: <input type="checkbox" name="q4">
+    <h3 style="color:aquamarine" id="q4q">What are the tool types the content describes UGC being used as?</h3>
+    <p class="quizparatext">A: Entertainment</p>
+    <p class="quizparatext">B: Informational</p>
+    <p class="quizparatext">C: Communative</p>
+    <p class="quizparatext">D: Expressive</p>
+    <p class="quizparatext">E: Social</p>
+    <p class="quizparatext">F: Destructive</p>
+    <p class="quizparatext">(Select all that apply)</p>
+    <p class="questioncorrect">A:</p> <input class="correct" type="checkbox" name="q4">
+    <p class="questioncorrect">B:</p> <input class="correct" type="checkbox" name="q4">
+    <p class="questionincorrect">C:</p> <input class ="incorrect" type="checkbox" name="q4">
+    <p class="questionincorrect">D:</p> <input class ="incorrect" type="checkbox" name="q4">
+    <p class="questioncorrect">E:</p> <input class="correct" type="checkbox" name="q4">
+    <p class="questionincorrect">F:</p> <input class="incorrect" type="checkbox" name="q4">
+    </div>
+
+    <div class="divborder">
+    <h1>Question 5:</h1>
+    <h3 id="q5" style="color:aquamarine">What law type prevents misappropriation of user or market content?</h3>
+    <p class="quizparatext">
+        A: Market Law
+    </p>
+    <p class="quizparatext">
+        B: Chinhook Law
+    </p>
+    <p class="quizparatext">
+        C: Storeright Law
+    </p> 
+    <p class="quizparatext">
+        D: Copyright Law
+    </p>
+    <p class="questionincorrect">A:</p> <input type="radio" name="q5">
+    <p class="questionincorrect">B:</p> <input  type="radio" name="q5">
+    <p class="questionincorrect">C:</p> <input  type="radio" name="q5" >
+    <p class="questioncorrect">D:</p> <input class="correct" type="radio" name="q5">
+    </div>
+
+    <div class="divborder">
+    <h1>Question 6:</h1>
+    <h3 id="q6" style="color:aquamarine">What is Anti-Development?</h3>
+    <p class="quizparatext">
+        A: A program or series of work done in order to hurt, hinder, or otherwise hack another program or user
+    </p>
+    <p class="quizparatext">
+        B: Special circumstances in which a fired employee, buisness associate, or important individual is allowed to distribute company systems to competitors
+    </p>
+    <p class="quizparatext">
+        C: A term used in content marketing that describes downward trends in analytics, despite overall growth in production value 
+    </p> 
+    <p class="quizparatext">
+        D: Content sabotage that users often invoke on insecure members of neighboring platforms (such as rival "fandoms" or website communities)
+    </p>
+    <p class="questioncorrect">A:</p> <input class="correct" type="radio" name="q6">
+    <p class="questionincorrect">B:</p> <input  type="radio" name="q6">
+    <p class="questionincorrect">C:</p> <input  type="radio" name="q6" >
+    <p class="questionincorrect">D:</p> <input type="radio" name="q6">
+    </div>
+
+    <div class="divborder">
+    <h1>Question 7:</h1>
+    <h3 id="q7" style="color:aquamarine">What is the quick, image based UGC that conveys information in a unobtrusive and compact way?</h3>
+    <p class="quizparatext">
+        A: Metronics
+    </p>
+    <p class="quizparatext">
+        B: Infographics
+    </p>
+    <p class="quizparatext">
+        C: Substance Imagery 
+    </p> 
+    <p class="quizparatext">
+        D: Syndrometrics
+    </p>
+    <p class="questionincorrect">A:</p> <input type="radio" name="q7">
+    <p class="questioncorrect">B:</p> <input  class="correct" type="radio" name="q7">
+    <p class="questionincorrect">C:</p> <input  type="radio" name="q7" >
+    <p class="questionincorrect">D:</p> <input type="radio" name="q7">
+    </div>
+
+    <div class="divborder">
+    <h1>Question 8:</h1>
+    <h3 style="color:aquamarine" id="q8q">What is ONE of the group names given for "Types of User Generated Content"?</h3>
+    <p class="quizparatext">Hint: Texts, Games, Code, etc. are  not groups. <br> Do you remember a name some of these things were nested under? </p>
+    <p class = "qtext" id="q8p">Answer(s):</p>
+    <input type="text" id="q8"><p class="qtext" style="display:inline-block">ㅤContent</p>
+    </div>
+
+    <div class="divborder">
+    <h1>Question 9:</h1>
+    <h3 style="color:aquamarine" id="q9q">Which of the following are examples of Legal misuse of UGC?</h3>
+    <p class="quizparatext">A: Political activists starting fights on a chatroom that does not allow politics</p>
+    <p class="quizparatext">B: Lying to a internet user about your profile picture being yourself</p>
+    <p class="quizparatext">C: Establishing a scam call center in a country that dissallows scamming</p>
+    <p class="quizparatext">D: Posting NSFW material to  public viewing platforms and websites</p>
+    <p class="quizparatext">E: Conspiring with friends in a video game world to bring harm to a real life person</p>
+    <p class="quizparatext">F: Posting graphic war footage to an open content platform that does not violate regional law</p>
+    <p class="quizparatext">G: Selling regionally banned drugs to a close friend in a closed, private internet space</p>
+    <p class="quizparatext">(Select all that apply)</p>
+
+    <p class="questionincorrect">A:</p> <input class="incorrect" type="checkbox" name="q9">
+    <p class="questionincorrect">B:</p> <input class="incorrect" type="checkbox" name="q9">
+    <p class="questioncorrect">C:</p> <input class ="correct" type="checkbox" name="q9">
+    <p class="questionincorrect">D:</p> <input class ="incorrect" type="checkbox" name="q9">
+    <p class="questioncorrect">E:</p> <input class="correct" type="checkbox" name="q9">
+    <p class="questionincorrect">F:</p> <input class="incorrect" type="checkbox" name="q9">
+    <p class="questioncorrect">G:</p> <input class="correct" type="checkbox" name="q9">
+</div>
+
+    <div class="divborder">
+    <h1>Question 10:</h1>
+    <h3 id="q10" style="color:aquamarine">Which of the following correctly defines Generative AI?</h3>
+    <p class="quizparatext">
+        A: A system that take control of your computer using an "Agent", and automatically execute learned tasks in a way that mimics human behavior and pattern
+    </p>
+    <p class="quizparatext">
+        B: A system that exclusively mimics characters or real people by generating chats with data centered around predicted responses and behaviorisms of the target
+    </p>
+    <p class="quizparatext">
+        C: A system model that possesses PHD level understandings of most concepts due to in-depth training and consistent data processing, generating text responses to queries with minor errors 
+    </p> 
+    <p class="quizparatext">
+        D: A system that is purpose built to create content that closely mimics human or user generated content, often receiving a "prompt" for instructions, and outputting the specified product based off response training
+    </p>
+    <p class="questionincorrect">A:</p> <input type="radio" name="q10">
+    <p class="questionincorrect">B:</p> <input  type="radio" name="q10">
+    <p class="questionincorrect">C:</p> <input  type="radio" name="q10" >
+    <p class="questioncorrect">D:</p> <input class="correct" type="radio" name="q10">
+    </div>
+
     <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/disabled disable reference-->
-    </fieldset>
-    <p style="color:red" id="demo">Final Result</p>
-    <p style="color:red; display: none;" id="demotime">Final Time</p>
-    <button id="submit" type="button">Submit</button>
+
+
+    <!-- testing stuff= <p style="color:red" id="score">Final Result</p>-->
+    <p></p>
+    <div class="container2">
+    <div class="col5"></div>
+    <button id="submit" type="button">Submit Test</button>
+    </div>
     <!--<button id="timer" type="button">Test Timer</button>-->
-    </form>
+
+</form>
+
+
 
 <!--<footer class="footerblock">
     <div>

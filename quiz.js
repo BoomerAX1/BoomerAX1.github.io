@@ -19,11 +19,14 @@
 
 const s = document.getElementById("submit");
 const begin = document.getElementById("beginbutton");
-const t = document.getElementById("timer")
+const t = document.getElementById("timer");
+const q = document.getElementById("quizgrid");
+const submitclick = new Event("click");
+let activated = false;
 let time = 600;
 let score = 0;
 let min = 10;
-let sec = 1;
+let sec = 0;
 
 begin.addEventListener("click", function(){
   
@@ -33,20 +36,23 @@ begin.addEventListener("click", function(){
   const timer = setInterval(function(){
 
     sec -=1
-    if (sec < 0 && min >= 1){
+    if (sec <= 0 && min >= 1){
       sec = 59
       min -= 1
     }
 
     if (sec >= 0 && sec <= 9){
-      document.getElementById("ttext").innerHTML = "time: " + min + ":0" + sec
+      document.getElementById("ttext").innerHTML = "Time Remaining: " + min + ":0" + sec
     }
     else  {
-      document.getElementById("ttext").innerHTML = "time: " + min + ":" + sec
+      document.getElementById("ttext").innerHTML = "Time Remaining: " + min + ":" + sec
     }
     
-    if (sec <= 0 && min <= 0){
-      document.getElementById("ttext").innerHTML = "time: finished"
+    if (sec === 0 && min === 0 && activated == false){
+      document.getElementById("ttext").innerHTML = "Time Remaining: None"
+      s.dispatchEvent(submitclick)
+      //dispatch event was brought to my attention via gemini in the base google search engine, and I did not copy and code whatsoever
+      //https://www.reddit.com/r/learnjavascript/comments/16wxe4j/how_to_add_a_listener_for_when_another_function/ is further reference for it
     }
 
 }
@@ -62,44 +68,108 @@ s.addEventListener("click", function() {
     let allChecks = document.querySelectorAll('input[type="checkbox"]');
     let allText = document.querySelectorAll('input[type="text"]');
     let q3 = document.getElementById("q3").value;
+    let q8 = document.getElementById("q8").value;
     let uncheckedRadios = document.querySelectorAll('input[type="radio"].correct:not(:checked)');
     let q4 = document.querySelectorAll('input[name="q4"].correct:checked');
+    let q4i = document.querySelectorAll('input[name="q4"].incorrect:checked');
+    let q9 = document.querySelectorAll('input[name="q9"].correct:checked');
+    let q9i = document.querySelectorAll('input[name="q9"].incorrect:checked');
     let checkedcheck = 0;
 
+    activated = true;
     document.getElementById("quizhide").style.display = "none";
+    
     uncheckedRadios.forEach((radio) => {
-      document.getElementById(radio.name).innerHTML = "wrong"
+      document.getElementById(radio.name).innerHTML += ' | <span style="color: red;">Incorrect</span>'
     });
     checkedRadios.forEach((radio) => {
-      document.getElementById(radio.name).innerHTML = "correct"
+      document.getElementById(radio.name).innerHTML += ' | <span style="color: green;">Correct</span>'
     });
 
-    if (q3.toLowerCase() === "test") {
+    document.querySelectorAll(".questioncorrect").forEach(element => {
+      element.style.color = "green";
+    });
+  
+    document.querySelectorAll(".questionincorrect").forEach(element => {
+      element.style.color = "red";
+    });
+
+    //. =  class
+
+
+
+    if (q3.toLowerCase() == "sourceforge" || q3.toLowerCase() == "github") {
         checkedtext += 1
+        document.getElementById("q3p").innerHTML += '<span style="color: #f54284;"> GitHub</span> or <span style="color: #f54284;">SourceForge</span>'
+        document.getElementById("q3q").innerHTML += ' | <span style="color: green;">Correct</span>'
+    }
+    else{
+      document.getElementById("q3p").innerHTML += '<span style="color: #f54284;"> GitHub</span> or <span style="color: #f54284;">SourceForge</span>'
+      document.getElementById("q3q").innerHTML += ' | <span style="color: red;">Incorrect</span>'
     };
 
-    if (q4.length == 2){
-      checkedcheck += 1
+    if (q8.toLowerCase() == "written" || q8.toLowerCase() == "audio" || q8.toLowerCase() == "photographic" || q8.toLowerCase() == "video" || q8.toLowerCase() == "file" || q8.toLowerCase() == "interactive"){
+        checkedtext += 1
+        document.getElementById("q8p").innerHTML += '<span style="color: #f54284;"> Written, Audio, Photographic, Video, File,</span> or <span style="color: #f54284;">Interactive</span>'
+        document.getElementById("q8q").innerHTML += ' | <span style="color: green;">Correct</span>'
     }
-    else if (q4.length == 1){
+    else{
+      document.getElementById("q8p").innerHTML += '<span style="color: #f54284;"> Written, Audio, Photographic, Video, File,</span> or <span style="color: #f54284;">Interactive</span>'
+      document.getElementById("q8q").innerHTML += ' | <span style="color: red;">Incorrect</span>'
+    };
+
+
+    if (q4.length == 3 && q4i.length == 0){
+      checkedcheck += 1
+      document.getElementById("q4q").innerHTML += ' | <span style="color: green;">Correct</span>'
+    }
+    else if (q4.length >= 1){
       checkedcheck += 0.5
+      document.getElementById("q4q").innerHTML += ' | <span style="color: orange;">Partial</span>'
     }
     else {
-      checkedcheck = 0.1
+      checkedcheck += 0
+      document.getElementById("q4q").innerHTML += ' | <span style="color: red;">Incorrect</span>'
     };
 
-    document.getElementById("demo").innerHTML = "Radios" + checkedRadios.length + "Text" + checkedtext + "Check" + checkedcheck;
-    let demotime = document.getElementById("demotime");
+    if (q9.length == 3 && q9i.length == 0){
+      checkedcheck += 1
+      document.getElementById("q9q").innerHTML += ' | <span style="color: green;">Correct</span>'
+    }
+    else if (q9.length >= 1){
+      checkedcheck += 0.5
+      document.getElementById("q9q").innerHTML += ' | <span style="color: orange;">Partial</span>'
+    }
+    else {
+      checkedcheck += 0
+      document.getElementById("q9q").innerHTML += ' | <span style="color: red;">Incorrect</span>'
+    };
+
+// text updator for the actual popup
+    //document.getElementById("score").innerHTML = "Radios" + checkedRadios.length + "Text" + checkedtext + "Check" + checkedcheck;
+    let totalscore = checkedRadios.length + checkedtext + checkedcheck;
+    document.getElementById("totaltext").innerHTML = "Total Score: " + totalscore + "/10"; 
+    let timetext = document.getElementById("timetext");
+    if (totalscore < 7){
+      document.getElementById("passfailtext").innerHTML = "Result: " + '<span style="color: red;">Fail</span>'
+    }
+    else if (totalscore >= 7 && totalscore <= 10){
+      document.getElementById("passfailtext").innerHTML = "Result: " + '<span style="color: green;">Pass</span>'
+    };
+
 
 if (sec >= 51){
-      demotime.innerHTML = "Time spent: " + (9-min) + ":0" + (60-sec)
+      timetext.innerHTML = "Time spent: " + (9-min) + ":0" + (60-sec)
     }
-    else  {
-      demotime.innerHTML = "Time spent: " + (9-min) + ":" + (60-sec)
-    };    
-    demotime.style.display = "block";
+    else if (sec !== 0){
+      timetext.innerHTML = "Time spent: " + (9-min) + ":" + (60-sec)
+    }
+    else {
+      timetext.innerHTML = "Time spent: " + (9-min+1) + ":00"
+    };   
     document.getElementById("ttext").style.display = "none";
 
+    //locking all questions after submit (see css file for lock)
     allRadios.forEach((radio) => {
       radio.classList.add("lock");
       radio.tabIndex = "-1";
@@ -112,12 +182,17 @@ if (sec >= 51){
       text.classList.add("lock");
       text.tabIndex = "-1";
     });
+
+//tabIndex removes them from being tabbed, making it a encompassing lock
+//https://stackoverflow.com/questions/507138/how-to-add-a-class-to-an-html-element-with-javascript 
+// I was also looking through general input security and discovered the tabIndex HTML tag through https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex 
+
+
     s.style.display = "none";
     s.tabIndex = "-1";
+    q.style.display = "grid";
 
-    //https://stackoverflow.com/questions/507138/how-to-add-a-class-to-an-html-element-with-javascript 
-    // I was also looking through general input security and discovered the tabIndex HTML tag through https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex 
-    });
+});
 
 //q3 else statement should hodl wrong/right logic
 //(maybe use classes pt.2?) The "G:,  1:, etc. text should be nested with checked/unchecked radio logic and make it turn green/red based off answer"
