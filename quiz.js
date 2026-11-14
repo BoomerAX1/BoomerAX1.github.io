@@ -29,7 +29,11 @@ let min = 10;
 let sec = 0;
 
 begin.addEventListener("click", function(){
-  
+  window.scrollTo({
+    top: 0
+  });
+  //https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+  document.getElementById("quizbody").classList.replace("backgroundqbegin", "gradiant3");
   document.getElementById("quizform").style.display = "block";
   document.getElementById("startform").style.display = "none";
   document.getElementById("quizhide").style.display = "none";
@@ -63,6 +67,9 @@ begin.addEventListener("click", function(){
 //queryselector # uses the name of a ID, . uses name of a class
 
 s.addEventListener("click", function() {
+  window.scrollTo({
+    top: 0
+  });
     let checkedRadios = document.querySelectorAll('input[type="radio"].correct:checked');
     let checkedtext = 0;
     let allRadios = document.querySelectorAll('input[type="radio"]');
