@@ -27,7 +27,7 @@ let time = 600;
 let score = 0;
 let min = 10;
 let sec = 0;
-
+//These are starting variables that need to either be accessed by both button listeners or just make sense to be const outside of a function
 begin.addEventListener("click", function(){
   window.scrollTo({
     top: 0
@@ -56,6 +56,7 @@ begin.addEventListener("click", function(){
     if (sec === 0 && min === 0 && activated == false){
       document.getElementById("ttext").innerHTML = "Time Remaining: None"
       s.dispatchEvent(submitclick)
+      //auto submit logic
       //dispatch event was brought to my attention via gemini in the base google search engine, and I did not copy and code whatsoever
       //https://www.reddit.com/r/learnjavascript/comments/16wxe4j/how_to_add_a_listener_for_when_another_function/ is further reference for it
     }
@@ -63,6 +64,7 @@ begin.addEventListener("click", function(){
 }
 , 1000)
 });
+//The begin button hides and alters elements in order to actually show the quiz content, then starts a 1000ms (1 tick per second) timer alteration of the HTML timer text
 
 //queryselector # uses the name of a ID, . uses name of a class
 
@@ -83,8 +85,10 @@ s.addEventListener("click", function() {
     let q9 = document.querySelectorAll('input[name="q9"].correct:checked');
     let q9i = document.querySelectorAll('input[name="q9"].incorrect:checked');
     let checkedcheck = 0;
+//A bunch of quiz variables
 
     activated = true;
+  //Sets activated in order to tell the timer not to auto-submit at 10 minutes (see timer above)
     document.getElementById("quizhide").style.display = "none";
     
     uncheckedRadios.forEach((radio) => {
@@ -93,6 +97,7 @@ s.addEventListener("click", function() {
     checkedRadios.forEach((radio) => {
       document.getElementById(radio.name).innerHTML += ' | <span style="color: green;">Correct</span>'
     });
+  //radios are easy to manipulate en masse, and I just set the question text to be the same id as the name of each radio group so I could loop through and do correct/incorrect logic of them all regardless of question
 
     document.querySelectorAll(".questioncorrect").forEach(element => {
       element.style.color = "green";
@@ -102,6 +107,7 @@ s.addEventListener("click", function() {
       element.style.color = "red";
     });
 
+    //these are visual representations of the ABCD(EFG...) choices once you submit. I decided this is more reasonable than making all 10 questions popup inside the popup
     //. =  class
 
 
@@ -126,6 +132,7 @@ s.addEventListener("click", function() {
       document.getElementById("q8q").innerHTML += ' | <span style="color: red;">Incorrect</span>'
     };
 
+    //written questions aren't like radios, I had to do them in specific chunks so each one had a set of right answers. Also, I couldn't just green highlight a answer, so I made a hidden list that shows on submission of every correct one
 
     if (q4.length == 3 && q4i.length == 0){
       checkedcheck += 1
@@ -153,6 +160,8 @@ s.addEventListener("click", function() {
       document.getElementById("q9q").innerHTML += ' | <span style="color: red;">Incorrect</span>'
     };
 
+    //checkboxes also were kinda finicky with score compared to radios, so their logic is roughly the same (compared to text atleast) but each one hold unique score identifiers (incase I wanted X question to have 2 answers, but Y question to have 4). Ultimately, both had 3
+
 // text updator for the actual popup
     //document.getElementById("score").innerHTML = "Radios" + checkedRadios.length + "Text" + checkedtext + "Check" + checkedcheck;
     let totalscore = checkedRadios.length + checkedtext + checkedcheck;
@@ -164,7 +173,7 @@ s.addEventListener("click", function() {
     else if (totalscore >= 7 && totalscore <= 10){
       document.getElementById("passfailtext").innerHTML = "Result: " + '<span style="color: green;">Pass</span>'
     };
-
+    //score logic. 10 questions meand 70% is just 7/10. obv would do different math for less questions
 
 if (sec >= 51){
       timetext.innerHTML = "Time spent: " + (9-min) + ":0" + (60-sec)
@@ -177,6 +186,8 @@ if (sec >= 51){
     };   
     document.getElementById("ttext").style.display = "none";
 
+
+    //this is the popup timer math, NOT the timer. this just takes the same values and does some math to show you how much time you used, not how much was left. users are told at the beginning this number is out of 10
     //locking all questions after submit (see css file for lock)
     allRadios.forEach((radio) => {
       radio.classList.add("lock");
@@ -198,11 +209,10 @@ if (sec >= 51){
 
     s.style.display = "none";
     s.tabIndex = "-1";
+    //hides submit and makes it so you can't tab and click it over and over
     q.style.display = "grid";
     document.getElementById("qfooter").style.display = "grid";
-
+    //enables popup and footer 
 });
 
-//q3 else statement should hodl wrong/right logic
-//(maybe use classes pt.2?) The "G:,  1:, etc. text should be nested with checked/unchecked radio logic and make it turn green/red based off answer"
 //no code was copied, but I learned a bit from some of the references
