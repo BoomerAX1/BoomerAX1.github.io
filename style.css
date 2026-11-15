@@ -386,17 +386,65 @@ but the lowest resolution I can test reliably with that testing website is like 
     text-align: center;
     color:rgb(186, 186, 233);
   }
+  .gridcolor1, .gridcolor2, .gridcolor26, .gridcolor27 {
+        font-size: 14px;
+    }
+
+    .gridcolor3 p {
+        font-size: 13px;
+    }
+
+    .gridcolor4, .gridcolor5 {
+        font-size: 14px;
+    }
+
+    .discp {
+        font-size: 14px;
+    }
+
+    .resultcolor, .quizparatext {
+        font-size: 14px;
+    }
+
+    .footerblock {
+        font-size: 11px;
+    }
 }
 /*This starts to mesh and cave in at 406 pixels*/
 
 
 /*Large TV*/
+/* Large screens */
 @media only screen and (min-width: 1920px) {
 
     .linkbar1 li a {
         padding: 16px 18px;
-        font-size: 50px;
+        font-size: 20px;
         color: #ff80b5;
+    }
+
+    .gridcolor1, .gridcolor2, .gridcolor26, .gridcolor27 {
+        font-size: 22px;
+    }
+
+    .gridcolor3 p {
+        font-size: 20px;
+    }
+
+    .gridcolor4, .gridcolor5 {
+        font-size: 22px;
+    }
+
+    .discp {
+        font-size: 22px;
+    }
+
+    .resultcolor, .quizparatext {
+        font-size: 20px;
+    }
+
+    .footerblock {
+        font-size: 17px;
     }
 }
 /* 4K TV */
@@ -404,8 +452,11 @@ but the lowest resolution I can test reliably with that testing website is like 
 
     .linkbar1 li a {
         padding: 22px 26px;
-        font-size: 60px;
+        font-size: 63px;
         color:darkkhaki;
+    }
+     .gridcolor1, .gridcolor2, .gridcolor26, .gridcolor27 {
+        font-size: 26px;
     }
 }
 /* 8K TV */
@@ -413,7 +464,10 @@ but the lowest resolution I can test reliably with that testing website is like 
 
     .linkbar1 li a {
         padding: 30px 35px;
-        font-size: 75px;
+        font-size: 100px;
         color:chocolate;
+    }
+    .gridcolor1, .gridcolor2, .gridcolor26, .gridcolor27 {
+        font-size: 32px;
     }
 }
