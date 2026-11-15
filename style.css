@@ -34,6 +34,7 @@ li a:hover{
 }
 }
 
+
 .dividingcolor1{
     background-color: black;
     text-align: center;
@@ -347,4 +348,144 @@ input[type="checkbox"]{
 }
 .backgroundqbegin{
     background-color: rgb(55, 32, 109);
+}
+
+/*Media Queries*/
+
+/*https://responsivetesttool.com/ testing*/
+/*Main issues without media query: Linkbar on small
+screens needs to be shrunk. Quiz overlaps badly on small
+screens. The Topic 1 images are extremely large on normal
+desktop screens, and probably need to be shrunk to match
+the text on all sizes. Finally, super large screens 
+(like tvs or monitors) make every element way to small.
+likely will need a large px breakpoint for large screens 
+to size the elements up*/
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .linkbar1 li a {
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+    color:rgb(186, 186, 233);
+  }
+}
+/*This starts to mesh and cave in at 406 pixels*/
+
+
+/*Large TV*/
+@media only screen and (min-width: 1920px) {
+
+    .linkbar1 li a {
+        padding: 16px 18px;
+        font-size: 20px;
+        color: #ff80b5;
+    }
+
+    /* Increase general text readability */
+    body {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    /* Increase grid spacing */
+    .container,
+    .container1,
+    .container2 {
+        padding: 15px;
+        row-gap: 15px;
+    }
+
+    /* Keep images from becoming excessively large */
+    .gridcolor3 img {
+        max-width: 650px;
+        width: 100%;
+        height: auto;
+    }
+
+    .quizgrid {
+        font-size: 20px;
+    }
+
+}
+/* 4K TV */
+@media only screen and (min-width: 3840px) {
+
+    .linkbar1 li a {
+        padding: 22px 26px;
+        font-size: 26px;
+        color:darkkhaki;
+    }
+
+    body {
+        font-size: 28px;
+    }
+
+    h1 {
+        font-size: 56px;
+    }
+
+    .container,
+    .container1,
+    .container2 {
+        padding: 25px;
+        row-gap: 20px;
+    }
+
+    .gridcolor3 img {
+        max-width: 900px;
+        width: 100%;
+        height: auto;
+    }
+
+    .quizgrid {
+        font-size: 26px;
+    }
+
+    .timercolor {
+        font-size: 30px;
+    }
+
+}
+/* 8K TV */
+@media only screen and (min-width: 7680px) {
+
+    .linkbar1 li a {
+        padding: 30px 35px;
+        font-size: 36px;
+        color:chocolate;
+    }
+
+    body {
+        font-size: 38px;
+    }
+
+    h1 {
+        font-size: 76px;
+    }
+
+    .container,
+    .container1,
+    .container2 {
+        padding: 40px;
+        row-gap: 30px;
+    }
+
+    .gridcolor3 img {
+        max-width: 1200px;
+        width: 100%;
+        height: auto;
+    }
+
+    .quizgrid {
+        font-size: 36px;
+    }
+
+    .timercolor {
+        font-size: 40px;
+    }
+
 }
