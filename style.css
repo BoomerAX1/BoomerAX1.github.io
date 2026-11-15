@@ -395,7 +395,7 @@ but the lowest resolution I can test reliably with that testing website is like 
 
     .linkbar1 li a {
         padding: 16px 18px;
-        font-size: 200px;
+        font-size: 50px;
         color: #ff80b5;
     }
 }
@@ -404,7 +404,7 @@ but the lowest resolution I can test reliably with that testing website is like 
 
     .linkbar1 li a {
         padding: 22px 26px;
-        font-size: 260px;
+        font-size: 60px;
         color:darkkhaki;
     }
 }
@@ -413,7 +413,7 @@ but the lowest resolution I can test reliably with that testing website is like 
 
     .linkbar1 li a {
         padding: 30px 35px;
-        font-size: 300px;
+        font-size: 75px;
         color:chocolate;
     }
 }
