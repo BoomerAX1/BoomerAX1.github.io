@@ -362,6 +362,17 @@ the text on all sizes. Finally, super large screens
 likely will need a large px breakpoint for large screens 
 to size the elements up*/
 
+/*ELEMENTS THAT HAVE TEXT NEEDING TO BE SCALED:
+ALL PAGES: .linkbar li a, .footerblock
+HOME: .gridcolor1, .gridcolor26, .gridcolor27 
+ABOUT: .aboutheader, .gridcolor3, .gridcolor4
+CONCEPTS: .gridcolor4, .gridcolor3, .aboutheader
+TOPIC 1 and 2: .gridcolor3, .gridcolor4, .discp, .aboutheader   
+RESOURCES: .aboutheader, .gridcolor5  
+QUIZ: .gridcolor5, #beginbutton, .divborder, .quizparatext, .questionincorrect, .questioncorrect, .qtext, #submit, .timercolor, .resultcolor, .retake               
+*/
+
+
 /* Extra small devices (400px and down) 
 NOTE: This breaks at around ~294 px if I shrink it super small with my VS code previwer, 
 but the lowest resolution I can test reliably with that testing website is like 320px so it should be fine
@@ -376,98 +387,283 @@ but the lowest resolution I can test reliably with that testing website is like 
   .gridcolor27{
     font-size: 12px;
   }
+  .gridcolor3 p {
+        font-size: 9.5px;
+    }
+    .gridcolor26{
+        font-size: 13px;
+    }
+    .gridcolor4 li {
+        font-size: 10px;
+        list-style: none;
+    }
+    .gridcolor4 ul{
+        padding: 1px;
+    }
+    .gridnocolor img{
+        display:none;
+    }
+    .gridcolor3 h1{
+        font-size: 15.5px;
+    }
+    .gridcolor5 ul{
+        padding: 1px;
+        list-style: none;
+    }
+    .timercolor{
+        font-size: 16px;
+        margin-left: 80%;
+    }
+    .divborder{
+        width: 55%;
+    }
+    input[type="radio"]{
+    margin-right: 1px;
+    }
+    .resultcolor{
+        width: 60%;
+        font-size: 10px;
+    }
+    .col7{
+        grid-column: 8;
+    }
+    
+
+
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 401px) and (max-width: 600px) {
     .linkbar1 li a {
-    padding: 10px;
-    font-size: 12px;
+    padding: 5px;
+    font-size: 10px;
     text-align: center;
-    color:rgb(186, 186, 233);
+    color:rgb(248, 75, 75);
   }
-  .gridcolor1, .gridcolor2, .gridcolor26, .gridcolor27 {
-        font-size: 14px;
+  .gridcolor27{
+    font-size: 12px;
+  }
+  .gridcolor3 p {
+        font-size: 9.5px;
     }
-
-    .gridcolor3 p {
+    .gridcolor26{
         font-size: 13px;
     }
-
-    .gridcolor4, .gridcolor5 {
-        font-size: 14px;
+    .gridcolor4 li {
+        font-size: 10px;
+        list-style: none;
     }
-
-    .discp {
-        font-size: 14px;
+    .gridcolor4 ul{
+        padding: 1px;
     }
-
-    .resultcolor, .quizparatext {
-        font-size: 14px;
+    .gridnocolor img{
+        display:none;
     }
-
-    .footerblock {
-        font-size: 11px;
+    .gridcolor3 h1{
+        font-size: 15.5px;
+    }
+    .gridcolor5 ul{
+        padding: 1px;
+        list-style: none;
+    }
+    .timercolor{
+        font-size: 16px;
+        margin-left: 80%;
+    }
+    .divborder{
+        width: 55%;
+    }
+    input[type="radio"]{
+    margin-right: 1px;
+    }
+    .resultcolor{
+        width: 60%;
+        font-size: 10px;
+    }
+    .col7{
+        grid-column: 8;
     }
 }
+
 /*This starts to mesh and cave in at 406 pixels*/
 
 
-/*Large TV*/
-/* Large screens */
+
+/* Large TV */
 @media only screen and (min-width: 1920px) {
 
     .linkbar1 li a {
-        padding: 16px 18px;
+        padding: 12px 16px;
         font-size: 20px;
         color: #ff80b5;
     }
 
-    .gridcolor1, .gridcolor2, .gridcolor26, .gridcolor27 {
+    .gridcolor27 {
         font-size: 22px;
     }
 
     .gridcolor3 p {
-        font-size: 20px;
+        font-size: 18px;
     }
 
-    .gridcolor4, .gridcolor5 {
-        font-size: 22px;
+    .gridcolor26 {
+        font-size: 24px;
     }
 
-    .discp {
-        font-size: 22px;
+    .gridcolor4 li {
+        font-size: 19px;
+        list-style: none;
     }
 
-    .resultcolor, .quizparatext {
-        font-size: 20px;
+    .gridcolor4 ul {
+        padding: 5px;
     }
 
-    .footerblock {
-        font-size: 17px;
+    .gridcolor3 h1 {
+        font-size: 30px;
+    }
+
+    .gridcolor5 ul {
+        padding: 5px;
+        list-style: none;
+    }
+
+    .timercolor {
+        font-size: 30px;
+        margin-left: 80%;
+    }
+
+    .divborder {
+        width: 55%;
+    }
+
+    input[type="radio"] {
+        margin-right: 4px;
+    }
+
+    .resultcolor {
+        width: 60%;
+        font-size: 19px;
     }
 }
+
+
 /* 4K TV */
 @media only screen and (min-width: 3840px) {
 
     .linkbar1 li a {
         padding: 22px 26px;
-        font-size: 63px;
-        color:darkkhaki;
+        font-size: 38px;
+        color: darkkhaki;
     }
-     .gridcolor1, .gridcolor2, .gridcolor26, .gridcolor27 {
-        font-size: 26px;
+
+    .gridcolor27 {
+        font-size: 34px;
+    }
+
+    .gridcolor3 p {
+        font-size: 28px;
+    }
+
+    .gridcolor26 {
+        font-size: 38px;
+    }
+
+    .gridcolor4 li {
+        font-size: 30px;
+        list-style: none;
+    }
+
+    .gridcolor4 ul {
+        padding: 10px;
+    }
+
+
+    .gridcolor3 h1 {
+        font-size: 48px;
+    }
+
+    .gridcolor5 ul {
+        padding: 10px;
+        list-style: none;
+    }
+
+    .timercolor {
+        font-size: 48px;
+        margin-left: 80%;
+    }
+
+    .divborder {
+        width: 55%;
+    }
+
+    input[type="radio"] {
+        margin-right: 8px;
+    }
+
+    .resultcolor {
+        width: 60%;
+        font-size: 30px;
     }
 }
+
+
 /* 8K TV */
 @media only screen and (min-width: 7680px) {
 
     .linkbar1 li a {
-        padding: 30px 35px;
-        font-size: 100px;
-        color:chocolate;
+        padding: 40px 48px;
+        font-size: 72px;
+        color: rgb(109, 167, 255);
     }
-    .gridcolor1, .gridcolor2, .gridcolor26, .gridcolor27 {
-        font-size: 32px;
+
+    .gridcolor27 {
+        font-size: 52px;
+    }
+
+    .gridcolor3 p {
+        font-size: 44px;
+    }
+
+    .gridcolor26 {
+        font-size: 58px;
+    }
+
+    .gridcolor4 li {
+        font-size: 46px;
+        list-style: none;
+    }
+
+    .gridcolor4 ul {
+        padding: 18px;
+    }
+
+
+    .gridcolor3 h1 {
+        font-size: 76px;
+    }
+
+    .gridcolor5 ul {
+        padding: 18px;
+        list-style: none;
+    }
+
+    .timercolor {
+        font-size: 76px;
+        margin-left: 80%;
+    }
+
+    .divborder {
+        width: 55%;
+    }
+
+    input[type="radio"] {
+        margin-right: 16px;
+    }
+
+    .resultcolor {
+        width: 60%;
+        font-size: 46px;
     }
 }
+
